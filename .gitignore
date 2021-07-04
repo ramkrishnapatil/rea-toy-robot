@@ -5,6 +5,7 @@
 /out/
 .project
 .classpath
+logFile.txt
 
 # Ignore Gradle GUI config
 gradle-app.setting

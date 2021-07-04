@@ -12,11 +12,10 @@ public class RobotPosition {
         this.facingDirection = facingDirection;
     }
 
-
     RobotPosition(RobotPosition robotPosition) {
-        x = robotPosition.getX();
-        y = robotPosition.getY();
-        facingDirection = robotPosition.getFacingDirection();
+        this.x = robotPosition.getX();
+        this.y = robotPosition.getY();
+        this.facingDirection = robotPosition.facingDirection;
     }
 
     public int getX() {
@@ -27,17 +26,20 @@ public class RobotPosition {
         return y;
     }
 
-    public FacingDirection getFacingDirection() {
+    public FacingDirection getDirection() {
         return facingDirection;
     }
 
-    public void setFacingDirection(FacingDirection direction) {
+    public void setDirection(FacingDirection direction) {
         facingDirection = direction;
+    }
+
+    public RobotPosition add(final RobotPosition toAdd) {
+        return new RobotPosition(x + toAdd.getX(), y + toAdd.getY(), facingDirection);
     }
 
     @Override
     public String toString() {
         return "x=" + x + " y=" + y  + " direction=" + facingDirection.toString();
     }
-
 }

@@ -30,7 +30,7 @@ public class TableTop {
             return false;
         }
 
-        return toMove.getY() < rows && toMove.getY() >= 0;
+        return toMove.getY() <= rows && toMove.getY() >= 0;
     }
 
 }
