@@ -9,9 +9,13 @@ import com.robot.otherTypes.RobotPosition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Invalid Robot command.
+ */
 public class InvalidRobotCommand implements IRobotCommand {
-    private static final Logger LOGGER = LogManager.getLogger(InvalidRobotCommand.class.getSimpleName());
+
     private final String command;
+    private static final Logger LOGGER = LogManager.getLogger(InvalidRobotCommand.class.getSimpleName());
 
     InvalidRobotCommand(String commandStr) {
         command = commandStr;

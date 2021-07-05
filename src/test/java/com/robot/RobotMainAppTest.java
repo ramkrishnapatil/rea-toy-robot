@@ -18,13 +18,12 @@ import com.robot.entities.ToyRobot;
 import com.robot.otherTypes.FacingDirection;
 
 public class RobotMainAppTest {
-    private RobotMainApp robotMainApp;
+
     private TableTop tableTop;
     private ToyRobot robot;
 
     @Before
     public void setup() {
-        robotMainApp = new RobotMainApp();
         tableTop = new TableTop();
         robot = new ToyRobot();
     }
@@ -45,7 +44,6 @@ public class RobotMainAppTest {
     @Test
     public void sampleBTest() {
         final List<String> commands = new ArrayList<>();
-
         commands.add("PLACE 0,0,NORTH");
         commands.add("LEFT");
         commands.add("REPORT");
@@ -74,21 +72,14 @@ public class RobotMainAppTest {
 
     @Test
     public void testWithoutPlace() {
-        // Test b
         final List<String> commands = new ArrayList<>();
-
         commands.add("LEFT");
         commands.add("REPORT");
         commands.add("RIGHT");
         commands.add("MOVE");
         executeCommands(commands);
 
-        // must be null as 'place' command is not given.
         assertNull(robot.getCurrentPosition());
-    }
-
-    private void executeCommands(final List<String> commands) {
-        commands.forEach(command -> RobotCommandFactory.getInstance().getCommand(command).execute(tableTop, robot));
     }
 
     @Test
@@ -96,6 +87,7 @@ public class RobotMainAppTest {
         String[] args = new String[] { "src/test/resources/SampleA.txt" };
         System.out.println(String.format("file.encoding: %s", System.getProperty("file.encoding")));
         System.out.println(String.format("defaultCharset: %s", Charset.defaultCharset().name()));
+        RobotMainApp robotMainApp = new RobotMainApp();
         robotMainApp.input(args)
                         .forEach(command -> RobotCommandFactory.getInstance().getCommand(command).execute(tableTop, robot));
         assertEquals("X position", 0, robot.getCurrentPosition().getX());
@@ -105,7 +97,8 @@ public class RobotMainAppTest {
 
     @Test
     public void unknownInputFileTest() {
-        String[] args = new String[] { "src/test/resources/unknownFile.txt" };
+        String[] args = new String[] { "src/test/resources/UnknownFile.txt" };
+        RobotMainApp robotMainApp = new RobotMainApp();
         robotMainApp.input(args)
                         .forEach(command -> RobotCommandFactory.getInstance().getCommand(command).execute(tableTop, robot));
         assertFalse(robot.isPlaced());
@@ -114,9 +107,14 @@ public class RobotMainAppTest {
     @Test
     public void unknownInputTest() {
         String[] args = new String[] { "A", "B" };
+        RobotMainApp robotMainApp = new RobotMainApp();
         robotMainApp.input(args)
                         .forEach(command -> RobotCommandFactory.getInstance().getCommand(command).execute(tableTop, robot));
         assertFalse(robot.isPlaced());
+    }
+
+    private void executeCommands(final List<String> commands) {
+        commands.forEach(command -> RobotCommandFactory.getInstance().getCommand(command).execute(tableTop, robot));
     }
 
 }

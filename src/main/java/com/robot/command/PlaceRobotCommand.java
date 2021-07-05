@@ -8,6 +8,9 @@ import com.robot.otherTypes.RobotPosition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Place Robot on TableTop.
+ */
 public class PlaceRobotCommand implements IRobotCommand {
 
     /**

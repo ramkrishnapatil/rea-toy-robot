@@ -1,5 +1,8 @@
 package com.robot.otherTypes;
 
+/**
+ * Robot position X, Y coordinates and FacingDirection.
+ */
 public class RobotPosition {
 
     private final int x;

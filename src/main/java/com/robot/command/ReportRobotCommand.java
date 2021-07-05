@@ -8,6 +8,9 @@ import com.robot.otherTypes.RobotPosition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Report Robot position.
+ */
 public class ReportRobotCommand implements IRobotCommand {
 
     /**

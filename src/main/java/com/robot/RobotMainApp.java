@@ -14,10 +14,17 @@ import com.robot.entities.ToyRobot;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Main application
+ */
 public class RobotMainApp {
 
     private static final Logger LOGGER = LogManager.getLogger(RobotMainApp.class.getSimpleName());
 
+    /**
+     * Main method
+     * @param args 0 - User Input, 1 - File Input
+     */
     public static void main(final String[] args) {
         final TableTop tableTop = new TableTop();
         final ToyRobot robot = new ToyRobot();
@@ -25,7 +32,7 @@ public class RobotMainApp {
         argsStream.forEach(command -> RobotCommandFactory.getInstance().getCommand(command).execute(tableTop, robot));
     }
 
-    Stream<String> input(final String[] args) {
+    public Stream<String> input(final String[] args) {
         switch (args.length) {
         case 0:
             return stdinStream();

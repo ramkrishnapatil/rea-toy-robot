@@ -4,7 +4,7 @@ import com.robot.otherTypes.FacingDirection;
 import com.robot.otherTypes.RobotPosition;
 
 /**
- * Commandtypes which Robot can accept.
+ * Valid Command Types which Robot can accept.
  */
 public enum CommandType {
     PLACE(new PlaceRobotCommand(new RobotPosition(0, 0, FacingDirection.EAST))),

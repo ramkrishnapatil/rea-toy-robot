@@ -6,10 +6,15 @@ import com.robot.entities.TableTop;
 import com.robot.entities.ToyRobot;
 import com.robot.exception.InvalidMoveException;
 import com.robot.otherTypes.RobotPosition;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Move Robot to next position.
+ */
 public class MoveRobotCommand implements IRobotCommand {
+
     /**
      * Logger.
      */
@@ -20,7 +25,7 @@ public class MoveRobotCommand implements IRobotCommand {
 
         if (robot.isPlaced()) {
             final RobotPosition currentLocation = robot.getCurrentPosition();
-            final RobotPosition toMove = currentLocation.add(currentLocation.getDirection().forward());
+            final RobotPosition toMove = currentLocation.add(currentLocation.getDirection().moveForward());
 
             if (tableTop.isValidMove(toMove)) {
                 robot.place(toMove);

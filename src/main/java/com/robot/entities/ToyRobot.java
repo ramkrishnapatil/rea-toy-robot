@@ -8,11 +8,11 @@ public class ToyRobot {
     private RobotPosition robotPosition;
 
     public void turnLeft() {
-        robotPosition.setDirection(robotPosition.getDirection().left());
+        robotPosition.setDirection(robotPosition.getDirection().rotateLeft());
     }
 
     public void turnRight() {
-        robotPosition.setDirection(robotPosition.getDirection().right());
+        robotPosition.setDirection(robotPosition.getDirection().rotateRight());
     }
 
     public void place(final RobotPosition toMove) {

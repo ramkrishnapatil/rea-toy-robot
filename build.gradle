@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'application'
+    id 'jacoco'
 }
 
 group 'org.rea'
@@ -22,4 +23,20 @@ dependencies {
 
 run {
     standardInput = System.in
+}
+
+
+// Copy dependencies to 'lib'
+task copyRuntimeLibs(type: Copy) {
+    into "$buildDir/libs/lib/"
+    from configurations.runtime
+}
+
+assemble.dependsOn copyRuntimeLibs
+
+jar {
+    manifest {
+        attributes 'Class-Path' : configurations.compile.collect { 'lib/' + it.getName() }.join(' ')
+        attributes 'Main-Class': 'com.robot.RobotMainApp'
+    }
 }

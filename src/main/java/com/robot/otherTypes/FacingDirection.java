@@ -4,81 +4,81 @@ public enum FacingDirection {
 
     NORTH {
         @Override
-        public FacingDirection left() {
+        public FacingDirection rotateLeft() {
             return WEST;
         }
 
         @Override
-        public FacingDirection right() {
+        public FacingDirection rotateRight() {
             return EAST;
         }
 
         @Override
-        public RobotPosition forward() {
+        public RobotPosition moveForward() {
             return new RobotPosition(0, 1, NORTH);
         }
     },
     SOUTH {
         @Override
-        public FacingDirection left() {
+        public FacingDirection rotateLeft() {
             return EAST;
         }
 
         @Override
-        public FacingDirection right() {
+        public FacingDirection rotateRight() {
             return WEST;
         }
 
         @Override
-        public RobotPosition forward() {
+        public RobotPosition moveForward() {
             return new RobotPosition(0, -1, SOUTH);
         }
     },
     EAST {
         @Override
-        public FacingDirection left() {
+        public FacingDirection rotateLeft() {
             return NORTH;
         }
 
         @Override
-        public FacingDirection right() {
+        public FacingDirection rotateRight() {
             return SOUTH;
         }
 
         @Override
-        public RobotPosition forward() {
+        public RobotPosition moveForward() {
             return new RobotPosition(1, 0, EAST);
         }
     },
     WEST {
         @Override
-        public FacingDirection left() {
+        public FacingDirection rotateLeft() {
             return SOUTH;
         }
 
         @Override
-        public FacingDirection right() {
+        public FacingDirection rotateRight() {
             return NORTH;
         }
 
         @Override
-        public RobotPosition forward() {
+        public RobotPosition moveForward() {
             return new RobotPosition(-1, 0, WEST);
         }
     };
 
     /**
-     * @return left of current direction
+     * @return Rotate left of current direction
      */
-    public abstract FacingDirection left();
+    public abstract FacingDirection rotateLeft();
 
     /**
-     * @return right of current direction
+     * @return Rotate right of current direction
      */
-    public abstract FacingDirection right();
+    public abstract FacingDirection rotateRight();
 
     /**
      * @return forward move from current direction
      */
-    public abstract RobotPosition forward();
+    public abstract RobotPosition moveForward();
 }

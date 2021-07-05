@@ -10,16 +10,16 @@ public class FacingDirectionTest {
     public void testLeftFullCircleTurn() {
         FacingDirection direction = FacingDirection.EAST;
 
-        direction = direction.left();
+        direction = direction.rotateLeft();
         assertEquals(FacingDirection.NORTH, direction);
 
-        direction = direction.left();
+        direction = direction.rotateLeft();
         assertEquals(FacingDirection.WEST, direction);
 
-        direction = direction.left();
+        direction = direction.rotateLeft();
         assertEquals(FacingDirection.SOUTH, direction);
 
-        direction = direction.left();
+        direction = direction.rotateLeft();
         assertEquals(FacingDirection.EAST, direction);
     }
 
@@ -27,16 +27,16 @@ public class FacingDirectionTest {
     public void testRightFullCircleTurn() {
         FacingDirection direction = FacingDirection.NORTH;
 
-        direction = direction.right();
+        direction = direction.rotateRight();
         assertEquals(FacingDirection.EAST, direction);
 
-        direction = direction.right();
+        direction = direction.rotateRight();
         assertEquals(FacingDirection.SOUTH, direction);
 
-        direction = direction.right();
+        direction = direction.rotateRight();
         assertEquals(FacingDirection.WEST, direction);
 
-        direction = direction.right();
+        direction = direction.rotateRight();
         assertEquals(FacingDirection.NORTH, direction);
 
     }

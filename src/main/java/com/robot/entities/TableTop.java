@@ -2,6 +2,9 @@ package com.robot.entities;
 
 import com.robot.otherTypes.RobotPosition;
 
+/**
+ * The TableTop where the Robot will be placed.
+ */
 public class TableTop {
 
     private final int rows;
