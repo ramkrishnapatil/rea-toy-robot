@@ -27,7 +27,7 @@ Toy Robot Simulator
 **TableTop**        : The TableTop class where the Robot will be placed.<br>
 **RobotPosition**   : The ToyRobot position with X, Y(co-ordinates) and F(Facing direction).<br>
 **FacingDirection** : The enum FacingDirection(NORTH, EAST, SOUTH, WEST).<br>
-####For more information see the UML diagrams in [package-info.java](https://github.com/ramkrishnapatil/rea-toy-robot/package-info.java)
+#### For more information see the UML diagrams in [package-info.java](https://github.com/ramkrishnapatil/rea-toy-robot/package-info.java)
 
 ### Sample Input and Output:
 A)
