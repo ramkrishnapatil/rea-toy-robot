@@ -32,12 +32,13 @@ public class RobotMainAppTest {
     public void sampleATest() {
         final List<String> commands = new ArrayList<>();
         commands.add("PLACE 0,0,NORTH");
+        commands.add("PLACE_OBJECT");
         commands.add("MOVE");
         commands.add("REPORT");
         executeCommands(commands);
 
         assertEquals("X position", 0, robot.getCurrentPosition().getX());
-        assertEquals("Y position", 1, robot.getCurrentPosition().getY());
+        assertEquals("Y position", 0, robot.getCurrentPosition().getY());
         assertEquals("Direction ", FacingDirection.NORTH, robot.getCurrentPosition().getDirection());
     }
 
