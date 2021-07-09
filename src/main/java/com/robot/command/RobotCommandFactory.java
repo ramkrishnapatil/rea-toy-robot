@@ -1,10 +1,10 @@
 package com.robot.command;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import com.robot.otherTypes.FacingDirection;
 import com.robot.otherTypes.RobotPosition;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Robot command factory

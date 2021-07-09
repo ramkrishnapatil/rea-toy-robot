@@ -11,6 +11,7 @@ public enum CommandType {
     LEFT(new RotateLeftRobotCommand()),
     RIGHT(new RotateRightRobotCommand()),
     MOVE(new MoveRobotCommand()),
+    PLACE_OBJECT(new PlaceObjectCommand()),
     REPORT(new ReportRobotCommand());
 
     private final IRobotCommand command;

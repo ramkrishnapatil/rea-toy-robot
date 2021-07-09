@@ -1,7 +1,5 @@
 package com.robot.command;
 
-import java.util.Optional;
-
 import com.robot.entities.TableTop;
 import com.robot.entities.ToyRobot;
 import com.robot.otherTypes.RobotPosition;
@@ -25,13 +23,11 @@ public class PlaceRobotCommand implements IRobotCommand {
     }
 
     @Override
-    public Optional<RobotPosition> execute(final TableTop tableTop, final ToyRobot robot) {
+    public void execute(final TableTop tableTop, final ToyRobot robot) {
         if (tableTop.isValidMove(robotPosition)) {
             robot.place(robotPosition);
-            return Optional.of(robotPosition);
         } else {
             LOGGER.error("Invalid place: {}", () -> robotPosition);
         }
-        return Optional.empty();
     }
 }
